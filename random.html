@@ -1,0 +1,51 @@
+<html><button onclick = dieRoll() style="background-color:red" >Roll A Die</button>
+<p id = "dieRoll">Die result will appear here</p>
+<br><br>
+<button onclick = coinToss() style="background-color:lightgreen" >Toss A Coin</button>
+<p id = "coinToss">Coin toss result will appear here</p>
+<br><br>
+<button onclick = diceRoll() style="background-color:yellow" >Roll 2 Dice</button>
+<p id = "diceRoll">2 Dice Sum will appear here</p>
+<br><br>
+<button onclick = pickCard() style="background-color:lightblue" >Pick a Card</button>
+<p id = "pickCard">Card result will appear here</p>
+<br><br>
+
+
+<script>
+function dieRoll(){
+
+var roll = Math.floor((Math.random() * 6) + 1);
+document.getElementById("dieRoll").innerHTML ="Die Result: " + roll;}
+
+function diceRoll(){
+
+var roll1 = Math.floor((Math.random() * 6) + 1);
+var roll2 = Math.floor((Math.random() * 6) + 1);
+var rollSum = (roll1+roll2);
+document.getElementById("diceRoll").innerHTML ="2 Dice sum: " + rollSum;}
+
+
+function coinToss(){
+
+
+var toss = Math.floor((Math.random() * 2));
+if(toss === 1){
+toss = "heads";}
+else{
+toss = "tails";} document.getElementById("coinToss").innerHTML ="Coin Result :" + toss;}
+
+function pickCard(){
+var suits = ["Spade", "Club", "Heart", "Diamond"];
+var cardNos = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"];
+var x = Math.floor((Math.random() * 4));
+var y = Math.floor((Math.random() * 13));
+var a = cardNos[y];
+var b = suits[x];
+document.getElementById("pickCard").innerHTML = a + " of " + b;
+}
+
+       
+         </script>
+         
+        </html>
